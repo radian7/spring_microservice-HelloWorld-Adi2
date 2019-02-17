@@ -12,6 +12,7 @@
 	<artifactId>spring_microservice-HelloWorld-Adi2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+	
 	<name>spring_microservice-HelloWorld-Adi2</name>
 	<description>spring_microservice-HelloWorld-Adi2</description>
 
