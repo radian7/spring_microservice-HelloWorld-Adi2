@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class HelloWorld {
 
-	// wywolanie http://localhost:8090/api/hello
+	// curl http://localhost:8090/api/hello
 	@RequestMapping("/hello") // wskazanie pod jakim adresem dostępna jest metoda (EndPoint)
 	@ResponseBody // wskazówka dla kontekstu Spring, aby zawartość metody (w tym przypadku String) był zwracany nie do modelu dla widoku lecz jako obiekt
 	public String hello() { // sygnatura metody
-        return "Hello World! :)"; // zwracana wartość przez przeglądarkę 
+        return "Pozdrowienia od PIS z Google Cloud Platform na Kubernetes Engine ! :)"; // zwracana wartość przez przeglądarkę 
     }
 	
 	// curl --header "number: 123" http://localhost:8090/api/getExampleRequestHeader
