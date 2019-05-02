@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/*
+ * dla Actuator 2.0 endpoint do /actuator/health
+ * 
+ */
+
 @RestController // rodzaj beana (typu klasy zarządzanej przez Spring)
 @RequestMapping("/api")
 public class HelloWorld {
