@@ -2,6 +2,10 @@ package com.example.demo;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -16,10 +20,26 @@ import org.springframework.web.bind.annotation.RestController;
  * 
  */
 
+@Component 
+@RefreshScope 
 @RestController // rodzaj beana (typu klasy zarządzanej przez Spring)
 @RequestMapping("/api")
 public class HelloWorld {
 
+    @Value("${testkey}")
+    String value;
+ 
+    //@Autowired
+    //private MyProperties properties;
+	
+    // curl http://localhost:8090/api/gettestkey
+	@RequestMapping("/gettestkey") // wskazanie pod jakim adresem dostępna jest metoda (EndPoint)
+	@ResponseBody
+	public String getTestKey() { // sygnatura metody
+        return value;
+		//return "1";
+    }
+	
 	// curl http://localhost:8090/api/hello
 	@RequestMapping("/hello") // wskazanie pod jakim adresem dostępna jest metoda (EndPoint)
 	@ResponseBody // wskazówka dla kontekstu Spring, aby zawartość metody (w tym przypadku String) był zwracany nie do modelu dla widoku lecz jako obiekt
